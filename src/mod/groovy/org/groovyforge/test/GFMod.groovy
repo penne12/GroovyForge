@@ -21,6 +21,9 @@ class GFMod extends GroovyMod {
             playerList.add((event["player"] as EntityPlayer).displayName)
         }
 
+        // Load Localizations
+        loadLanguageScript("groovyforge/translations.groovy")
+
         // Testing Item
         items["Player List"] = new PlayerListItem()
 
