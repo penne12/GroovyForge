@@ -1,4 +1,5 @@
 package net.minecraftforge.groovy
+
 import cpw.mods.fml.common.network.IConnectionHandler
 import cpw.mods.fml.common.network.NetworkRegistry
 import cpw.mods.fml.common.network.Player

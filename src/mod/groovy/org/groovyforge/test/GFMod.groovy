@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraftforge.groovy.GroovyMod
 import net.minecraftforge.groovy.MCEventRegister
 
-@Mod(modid =  "GFMod", name = "GroovyForge Test Mod", version = "1.0")
+@Mod(modid = "GFMod", name = "GroovyForge Test Mod", version = "1.0")
 class GFMod extends GroovyMod {
 
     static Set<String> playerList = []

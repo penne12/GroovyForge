@@ -10,16 +10,18 @@ class GEventBus {
 
     @CompileStatic
     void on(String name, Closure handler) {
-        if (!(name in handlers))
+        if (!(name in handlers)) {
             handlers[name] = []
+        }
         handlers[name].add(handler)
     }
 
     @CompileStatic
     void dispatch(data, useThread = false) {
         def name = data['name'] as String
-        if (name == null || !handlers.containsKey(name))
+        if (name == null || !handlers.containsKey(name)) {
             return
+        }
         def handlers = handlers[name] as List<Closure>
         def execute = { ->
             handlers.each { Closure handler ->

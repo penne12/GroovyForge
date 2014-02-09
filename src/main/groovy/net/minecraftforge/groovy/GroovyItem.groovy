@@ -20,10 +20,11 @@ class GroovyItem extends Item {
 
     @Override
     boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int a, float fj, float fa, float fm) {
-        if (!world.isRemote)
+        if (!world.isRemote) {
             return rightClickHandlers*.call(new RightClickEvent(player, stack, world, x, y, z)).contains(true)
-        else
+        } else {
             return false
+        }
     }
 
     void onRightClick(Closure<Boolean> handler) {
