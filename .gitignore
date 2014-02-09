@@ -13,3 +13,5 @@
 /build-number.txt
 /.c9*
 atlassian-ide-plugin.xml
+eclipse/
+work/

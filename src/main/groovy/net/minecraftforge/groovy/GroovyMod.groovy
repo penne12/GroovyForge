@@ -1,26 +1,25 @@
 package net.minecraftforge.groovy
 
-import cpw.mods.fml.common.Mod
-import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.registry.GameRegistry
 import cpw.mods.fml.common.registry.LanguageRegistry
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 
 class GroovyMod {
+
     Map<String, Block> blocks = [:]
     Map<String, Item> items = [:]
+    GEventBus eventBus = new GEventBus()
 
-    @Mod.EventHandler
-    void initialize(FMLInitializationEvent event) {
-        blocks.each {
-            GameRegistry.registerBlock(it.value, "groovy.${it.key}")
-            LanguageRegistry.addName(it.value, it.key)
+    void registration() {
+        blocks.each { entry ->
+            GameRegistry.registerBlock(entry.value, "groovy.${entry.key}")
+            LanguageRegistry.addName(entry.value, entry.key)
         }
 
-        items.each {
-            GameRegistry.registerItem(it.value, "groovy.${it.key}")
-            LanguageRegistry.addName(it.value, it.key)
+        items.each { entry ->
+            GameRegistry.registerItem(entry.value, "groovy.${entry.key}")
+            LanguageRegistry.addName(entry.value, entry.key)
         }
     }
 }
